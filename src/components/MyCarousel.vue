@@ -1,6 +1,7 @@
 <template>
   <div class="dev mycarousel">
-    <div class="dev mycarousel__images p-2 mr-2 hidden md:block">
+    <!-- Lista de imágenes lateral -->
+    <div class="dev mycarousel__images p-2 mr-2 hidden lg:block">
       <div
         v-for="(image, index) in this.$store.state.images"
         :key="image.id"
@@ -39,7 +40,9 @@ export default {
 
 <style lang="scss" scoped>
 .mycarousel {
-  max-height: 50vh;
+  height: 70vh;
+  max-height: 500px;
+  margin-bottom: 30px;
 
   display: flex;
   overflow: auto;
@@ -52,12 +55,10 @@ export default {
 
   .image__container {
     width: 100%;
-    height: 100%;
     margin-bottom: 10px;
     // flex
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
     &:hover {
       cursor: pointer;
     }
@@ -66,7 +67,6 @@ export default {
 
 .mycarousel__image {
   width: 100%;
-  height: 100%;
   object-fit: cover;
 }
 
