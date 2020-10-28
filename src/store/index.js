@@ -41,7 +41,9 @@ export default new Vuex.Store({
 
   actions: {
     bindImages: firestoreAction(({ bindFirestoreRef }) => {
-      return bindFirestoreRef('images', db.collection('images'))
+      //
+      // Obtiene las imágenes de forma más actual por fecha de creación
+      return bindFirestoreRef('images', db.collection('images').orderBy('created', 'desc'))
     })
   },
 

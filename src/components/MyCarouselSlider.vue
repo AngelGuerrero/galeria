@@ -1,5 +1,5 @@
 <template>
-  <div class="slider__container p-2">
+  <div class="slider__container">
     <ul class="slider__images">
       <li
         v-for="(image, index) in images"
@@ -7,7 +7,12 @@
         class="slider__item"
         :class="[ index == 0 ? 'active': '']"
       >
-        <img class="slider__image"  :src="image.href" :alt="image" />
+        <MyCarouselImage
+          :title="image.title"
+          :description="image.description"
+          :url="image.href"
+          clazz="slider__image"
+        />
       </li>
 
     </ul>
@@ -20,9 +25,14 @@
 </template>
 
 <script>
+import MyCarouselImage from './MyCarouselImage'
 import { mapState } from 'vuex'
 
 export default {
+  components: {
+    MyCarouselImage
+  },
+
   computed: {
     ...mapState(
       //
@@ -114,17 +124,6 @@ export default {
 
 .active {
   opacity: 1;
-}
-
-.slider__image {
-  width: 100%;
-  height: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  // Las imágenes están apiladas
-  position: absolute;
-  top: 0;
-  left: 0;
 }
 
 .btn {

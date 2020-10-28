@@ -8,10 +8,15 @@
         class="dev image__container"
         @click="selectImage(index)"
       >
-        <img class="mycarousel__image" :src="image.href" :alt="image" />
+        <MyCarouselImage
+          :title="image.title"
+          :description="image.description"
+          :url="image.href"
+        />
       </div>
     </div>
 
+    <!-- Carousel que muestra la imagen seleccionada -->
     <div class="dev mycarousel__view">
       <MyCarouselSlider />
     </div>
@@ -20,10 +25,12 @@
 
 <script>
 import MyCarouselSlider from './MyCarouselSlider'
+import MyCarouselImage from './MyCarouselImage'
 
 export default {
   components: {
-    MyCarouselSlider
+    MyCarouselSlider,
+    MyCarouselImage
   },
 
   created () {
@@ -56,6 +63,7 @@ export default {
   .image__container {
     width: 100%;
     margin-bottom: 10px;
+    position: relative;
     // flex
     display: flex;
     flex-direction: column;
@@ -63,11 +71,6 @@ export default {
       cursor: pointer;
     }
   }
-}
-
-.mycarousel__image {
-  width: 100%;
-  object-fit: cover;
 }
 
 .mycarousel__view {
