@@ -1,5 +1,6 @@
 <template>
-  <div class="home">
+  <div class="px-3 md:px-16">
+    <h1 class="font-bold text-3xl">🐕‍🦺 Dogs & Cats 🐈</h1>
     <MyCarousel />
   </div>
 </template>

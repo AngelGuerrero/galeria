@@ -1,6 +1,6 @@
 <template>
-  <div class="dev form__wrapper">
-    <h3>Agregar nueva imagen</h3>
+  <div class="dev px-3 md:px-16">
+    <h1>Agregar nueva imagen</h1>
     <input class="input" v-model="image" type="text" />
     <button class="btn" @click="addNewImage">Agregar</button>
   </div>
@@ -43,12 +43,6 @@ export default {
   border-radius: 4px;
 }
 
-.form__wrapper {
-  width: 80%;
-  max-width: 800px;
-  margin: auto;
-  padding: 10px;
-}
 .btn {
   border: 1px solid transparent;
   padding: 8px;

@@ -3,10 +3,14 @@ module.exports = {
     'boxSizing',
     'margin',
     'padding',
+    'textColor',
+    'fontWeight',
+    'fontSize',
     //
     'backgroundColor',
     'borderStyle',
     'borderWidth',
+    'borderColor',
     // Flex
     'flex',
     'flexDirection',
