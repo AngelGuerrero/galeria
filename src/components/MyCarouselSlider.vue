@@ -1,14 +1,18 @@
 <template>
   <div class="slider__container">
-    <ul class="slider__images">
+    <ul v-if="images" class="slider__images">
       <li
-        v-for="image in images"
+        v-for="(image, index) in images"
         :key="image.id"
         class="slider__item"
+        :class="[ index == 0 ? 'active': '']"
       >
-        <img class="slider__image" :src="image.href" :alt="image" />
+        <img class="slider__image"  :src="image.href" :alt="image" />
       </li>
     </ul>
+    <div v-else>
+      <h3>Cargando...</h3>
+    </div>
 
     <button @click="prev()">prev</button>
     <button @click="next()">next</button>
@@ -42,13 +46,6 @@ export default {
     }
   },
 
-  mounted () {
-    //
-    // Se muestra el primer elemento por defecto
-    //
-    // document.getElementsByClassName('slider__item')[this.selectedImage].classList.add('active')
-  },
-
   methods: {
     removeAllClasses () {
       const elements = document.getElementsByClassName('slider__item')
@@ -71,7 +68,6 @@ export default {
     //
     addClass (current) {
       document.getElementsByClassName('slider__item')[current].classList.add('active')
-      // this.selectedImage = current
       this.$store.commit('setSelectedImage', current)
     },
 
@@ -96,6 +92,7 @@ export default {
 
 <style lang="scss" scoped>
 .slider__container {
+  min-height: 500px;
   width: 100%;
   height: 100%;
 }
