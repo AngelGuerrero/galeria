@@ -6,6 +6,7 @@ module.exports = {
     'textColor',
     'fontWeight',
     'fontSize',
+    'borderRadius',
     //
     'backgroundColor',
     'borderStyle',
