@@ -1,14 +1,13 @@
 <template>
   <div class="dev mycarousel">
     <div class="dev mycarousel__images p-2 mr-2 hidden md:block">
-      <!-- This could be a component -->
       <div
         v-for="(image, index) in this.$store.state.images"
-        :key="image"
+        :key="image.id"
         class="dev image__container"
         @click="selectImage(index)"
       >
-        <img class="mycarousel__image" :src="image" :alt="image" />
+        <img class="mycarousel__image" :src="image.href" :alt="image" />
       </div>
     </div>
 
@@ -25,14 +24,13 @@ export default {
   components: {
     MyCarouselSlider
   },
-  data: () => ({
 
-    selectedImage: null
-  }),
+  created () {
+    this.$store.dispatch('bindImages')
+  },
 
   methods: {
     selectImage (index) {
-      console.log(index)
       this.$store.commit('setSelectedImage', index)
     }
   }

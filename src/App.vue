@@ -37,7 +37,7 @@ body {
 }
 
 .dev {
-  border: 1px solid tomato;
+  // border: 1px solid tomato;
 }
 
 ::-webkit-scrollbar {
