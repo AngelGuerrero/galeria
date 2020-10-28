@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import About from '../views/About.vue'
+import Contact from '../views/Contact.vue'
 
 Vue.use(VueRouter)
 
@@ -11,9 +13,19 @@ const routes = [
     component: Home
   },
   {
-    path: '/new',
-    name: 'NewImage',
+    path: '/acerca',
+    name: 'Acerca',
+    component: About
+  },
+  {
+    path: '/herramientas',
+    name: 'Herramientas',
     component: () => import('../views/NewImageForm.vue')
+  },
+  {
+    path: '/contacto',
+    name: 'Contacto',
+    component: Contact
   }
 ]
 

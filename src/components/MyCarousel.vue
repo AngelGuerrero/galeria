@@ -39,8 +39,11 @@ export default {
 
 <style lang="scss" scoped>
 .mycarousel {
-  height: 500px;
+  max-height: 50vh;
+
   display: flex;
+  overflow: auto;
+  background-color: white;
 }
 
 .mycarousel__images {

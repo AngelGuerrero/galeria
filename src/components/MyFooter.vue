@@ -1,43 +1,55 @@
 <template>
-  <div class="dev myfooter p-3">
-    <div class="dev col">
-      <div>
-      <h2 class="m-0">Ubicación</h2>
-      <p class="m-0">Toltecas #338 Querétaro</p>
+  <div class="myfooter">
+    <div class="min-w-full px-5 md:flex md:justify-around">
+      <!-- Columna -->
+      <div class="col p-2 w-full md:w-2/5">
+        <!-- Ubicación -->
+        <div>
+          <h3 class="footer__title">Ubicación</h3>
+          <p class="footer__text">
+            Avenida Campo Real 1527, El Refugio, Querétaro
+          </p>
+        </div>
+        <div>
+          <h3 class="footer__title">Teléfono</h3>
+          <p class="footer__text">
+            +52 (442) 809 3077
+          </p>
+        </div>
       </div>
-      <div>
-        <h4 class="mb-0">Teléfono</h4>
-        <p class="m-0">222-222-222</p>
-      </div>
-    </div>
-    <div class="dev col">
-      <div>
-        <h4 class="m-0">Email</h4>
-        <p class="m-0">correo@gmail.com</p>
-      </div>
-      <div>
-        <h4 class="mb-0">Redes sociales</h4>
-        <p class="m-0">correo@gmail.com</p>
+
+      <!-- Columna -->
+      <div class="col p-2 w-full md:w-2/5">
+        <div>
+          <h3 class="footer__title">Correo Electrónico</h3>
+          <p class="footer__text">correo@gmail.com</p>
+        </div>
+        <div>
+          <h3 class="footer__title">Redes sociales</h3>
+          <p class="footer__text">correo@gmail.com</p>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-}
+export default {}
 </script>
 
 <style lang="scss" scoped>
 .myfooter {
   margin: auto;
-
   display: flex;
   flex-wrap: wrap;
+  background-color: $dark;
+  color: $yellow;
 }
 
-.col {
-  flex-grow: 1;
-  padding: 5px;
+.footer__title {
+  @apply mb-0
+}
+.footer__text {
+  @apply text-white my-2
 }
 </style>

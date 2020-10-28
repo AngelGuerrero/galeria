@@ -1,15 +1,26 @@
 <template>
-<div class="mynavbar">
+  <div class="mynavbar px-3">
+    <!-- Logotipo -->
+    <div class="dev logo">
+      <img src="../assets/images/logo.png" alt="" />
+    </div>
 
-  <div class="logo dev">
-    <img src="../assets/logo.png" alt="">
+    <!-- Botón para abrir el menú -->
+    <div class="dev btn__menu flex ml-auto md:hidden">
+      <p class="p-3 m-0 font-bold flex justify-center items-center hover:text-red-600">Menu</p>
+    </div>
+
+    <!-- Lista de menús -->
+    <div class="dev hidden md:flex-1 md:flex md:justify-end">
+      <router-link
+        v-for="item in menu"
+        :key="item.id"
+        :to="item.to"
+        class="dev menu__item p-3 flex justify-center items-center font-bold hover:text-yellow-300"
+        >{{ item.title }}</router-link
+      >
+    </div>
   </div>
-
-  <div class="menu">
-    <router-link v-for="item in menu" :key="item.id" :to="item.to" class="menu__item dev">{{ item.title }}</router-link> |
-  </div>
-
-</div>
 </template>
 
 <script>
@@ -17,7 +28,9 @@ export default {
   data: () => ({
     menu: [
       { title: 'Inicio', to: '/' },
-      { title: 'Nueva imagen', to: '/new' }
+      { title: 'Acerca', to: '/acerca' },
+      { title: 'Herramientas', to: '/herramientas' },
+      { title: 'Contacto', to: '/contacto' }
     ]
   })
 }
@@ -25,34 +38,30 @@ export default {
 
 <style lang="scss" scoped>
 .mynavbar {
+  height: 100%;
+
   border: 1px solid;
   display: flex;
-  padding: 5px;
-  background-color: rgb(13, 21, 48);
+  background-color: $dark;
 }
 
 .logo {
+  width: 200px;
+  padding: 7px;
   img {
+    width: 100%;
     height: 100%;
-    max-height: 50px;
+    object-fit: contain;
   }
 }
 
-.menu {
-  flex-grow: 1;
-  display: flex;
-  justify-content: flex-end;
+.btn__menu {
+  cursor: pointer;
+  color: $yellow;
 }
+
 .menu__item {
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   text-decoration: none;
-  color: white;
-
-  &:hover {
-    color: aqua;
-  }
+  color: $yellow;
 }
 </style>
