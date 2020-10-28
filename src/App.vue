@@ -1,11 +1,9 @@
 <template>
   <div id="app">
     <Navbar />
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <router-view/>
+    <main class="main">
+      <router-view/>
+    </main>
     <MyFooter />
   </div>
 </template>
@@ -23,7 +21,7 @@ export default {
 </script>
 
 <style lang="scss">
-$azul-claro: #002854;
+$azul-claro: #0066ff;
 $azul-oscuro: #212120;
 $rojo-claro: #fb0007;
 $rojo-oscuro: #89262c;
@@ -35,6 +33,7 @@ $dark-blue: darken($azul-claro, 8%);
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .dev {
@@ -52,6 +51,17 @@ body {
 
 ::-webkit-scrollbar-thumb:vertical {
   height: 30px;
-  background-color: $rojo-claro;
+  background-color: $azul-claro;
+}
+.main {
+  min-height: 50vh;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Roboto', sans-serif;
 }
 </style>
