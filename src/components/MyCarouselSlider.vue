@@ -3,10 +3,10 @@
     <ul class="slider__images">
       <li
         v-for="image in images"
-        :key="image"
+        :key="image.id"
         class="slider__item"
       >
-        <img class="slider__image" :src="image" :alt="image" />
+        <img class="slider__image" :src="image.href" :alt="image" />
       </li>
     </ul>
 
@@ -46,7 +46,7 @@ export default {
     //
     // Se muestra el primer elemento por defecto
     //
-    document.getElementsByClassName('slider__item')[this.selectedImage].classList.add('active')
+    // document.getElementsByClassName('slider__item')[this.selectedImage].classList.add('active')
   },
 
   methods: {
@@ -96,7 +96,6 @@ export default {
 
 <style lang="scss" scoped>
 .slider__container {
-  border: 1px solid blue;
   width: 100%;
   height: 100%;
 }
