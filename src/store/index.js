@@ -8,16 +8,34 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    //
+    // Imágenes traídas desde Firebase
     images: [],
-
-    selectedImage: 0
+    //
+    // Imagen seleccionada por el usuario
+    selectedImage: 0,
+    //
+    // Mensaje de alerta
+    ui: {
+      show: false,
+      title: '',
+      message: '',
+      error: false
+    }
   },
 
   mutations: {
+    //
+    // IMPORTANTE!!! 🤦‍♂️
+    //
     ...vuexfireMutations,
 
     setSelectedImage (state, value) {
       state.selectedImage = value
+    },
+
+    setMessage (state, payload) {
+      state.ui = payload
     }
   },
 

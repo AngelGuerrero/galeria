@@ -1,13 +1,19 @@
 <template>
-  <div class="mynavbar px-3">
+  <div class="mynavbar px-3 md:px-2">
     <!-- Logotipo -->
-    <div class="dev logo">
-      <img src="../assets/images/logo.png" alt="" />
+    <div class="dev logo py-3">
+      <router-link to="/">
+        <img src="../assets/images/logo.png" alt="" />
+      </router-link>
     </div>
 
     <!-- Botón para abrir el menú -->
     <div class="dev btn__menu flex ml-auto md:hidden">
-      <p class="p-3 m-0 font-bold flex justify-center items-center hover:text-red-600">Menu</p>
+      <p
+        class="p-3 m-0 font-bold flex justify-center items-center hover:text-red-600"
+      >
+        Menu
+      </p>
     </div>
 
     <!-- Lista de menús -->
@@ -46,8 +52,8 @@ export default {
 }
 
 .logo {
-  width: 200px;
-  padding: 7px;
+  width: 100px;
+  cursor: pointer;
   img {
     width: 100%;
     height: 100%;
