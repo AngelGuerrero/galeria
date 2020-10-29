@@ -1,0 +1,27 @@
+<template>
+  <div
+    class="dev
+          w-full
+          bg-white
+          md:bg-transparent
+          h-full
+          md:max-w-screen-md
+          mx-auto
+          flex
+          items-start
+          md:items-center"
+>
+    <div
+      class="dev
+              w-full
+              mx-auto
+              p-5
+              bg-transparent
+            md:bg-white
+              rounded
+              md:shadow-xl"
+    >
+      <slot></slot>
+    </div>
+  </div>
+</template>

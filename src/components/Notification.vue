@@ -1,13 +1,25 @@
 <template>
   <div
     v-if="this.$store.state.ui.show"
-    class="border-gray-600 border-solid p-3 rounded font-bold"
-    :class="[this.$store.state.ui.error ? 'bg-red-600' : 'bg-green-600']"
+    class=" border-1
+            border-solid
+            p-2
+            rounded
+            shadow-lg
+            font-bold"
+    :class="[
+      this.$store.state.ui.error
+        ? 'bg-red-300 border-red-600'
+        : 'bg-green-300 border-green-600'
+    ]"
   >
-    <h3 class="font-bold m-0 p-0 text-white">
+    <h3
+      class="font-bold m-0 p-0"
+      :class="[this.$store.state.ui.error ? 'text-red-700' : 'text-green-700']"
+    >
       {{ this.$store.state.ui.title }}
     </h3>
-    <p class="text-white">
+    <p class="text-black mb-0">
       {{ this.$store.state.ui.message }}
     </p>
   </div>
@@ -25,16 +37,10 @@ export default {
       immediate: true,
       handler (val) {
         if (val.show) {
-          this.hideNotification()
+          setTimeout(() => this.hideNotification(), 4000)
         }
       }
     }
-  },
-
-  created () {
-    const hideNotification = () => this.hideNotification()
-
-    setTimeout(() => hideNotification(), 2000)
   },
 
   methods: {

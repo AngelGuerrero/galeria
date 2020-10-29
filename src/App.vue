@@ -6,7 +6,7 @@
     </div>
 
     <!-- Main view -->
-    <main class="dev main">
+    <main class="dev main flex-1">
       <router-view />
     </main>
 

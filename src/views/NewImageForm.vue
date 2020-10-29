@@ -1,8 +1,8 @@
 <template>
-  <div class="dev px-3 md:px-16">
-    <h1>Agregar nueva imagen</h1>
-
+  <Form>
     <Notification />
+
+    <h1>Agregar nueva imagen</h1>
 
     <form @submit.prevent="addNewImage">
       <!-- Imagen -->
@@ -49,16 +49,19 @@
       </div>
       <input type="submit" class="btn" value="Agregar imagen" />
     </form>
-  </div>
+
+  </Form>
 </template>
 
 <script>
+import Form from '@/components/Form'
 import Notification from '@/components/Notification'
 import { db } from '@/data/FirebaseConfig'
 
 export default {
   components: {
-    Notification
+    Notification,
+    Form
   },
 
   data: () => ({
@@ -106,31 +109,4 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-.input {
-  width: 100%;
-  font-size: 16px;
-  font-size: max(16px, 1em);
-  font-family: inherit;
-  padding: 0.25em 0.5em;
-  background-color: #fff;
-  border: 2px solid rgb(78, 22, 168);
-  border-radius: 4px;
-}
-
-.btn {
-  border: 1px solid transparent;
-  padding: 8px;
-  margin: 10px 0;
-  background-color: $blue;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-  &:hover {
-    background-color: lighten($color: $blue, $amount: 20);
-  }
-  &:active {
-    background-color: lighten($color: $blue, $amount: 50);
-  }
-}
-</style>
+<style lang="scss" scoped></style>

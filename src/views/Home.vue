@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MyCarousel from '@/components/MyCarousel'
+import MyCarousel from '@/components/MyCarousel/MyCarousel'
 
 export default {
   name: 'Home',

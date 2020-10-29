@@ -1,9 +1,11 @@
 <template>
-  <div class="mynavbar px-3 md:px-2">
+  <div class="navbar__wrapper h-full md:px-2">
+    <div class="h-full flex max-w-screen-xl mx-auto">
+
     <!-- Logotipo -->
     <div class="dev logo py-3">
       <router-link to="/">
-        <img src="../assets/images/logo.png" alt="" />
+        <img class="p-2" src="../assets/images/logo.png" alt="" />
       </router-link>
     </div>
 
@@ -26,6 +28,7 @@
         >{{ item.title }}</router-link
       >
     </div>
+    </div>
   </div>
 </template>
 
@@ -36,19 +39,16 @@ export default {
       { title: 'Inicio', to: '/' },
       { title: 'Acerca', to: '/acerca' },
       { title: 'Herramientas', to: '/herramientas' },
-      { title: 'Contacto', to: '/contacto' }
+      { title: 'Contacto', to: '/contacto' },
+      { title: 'Ingresar', to: '/ingresar' }
     ]
   })
 }
 </script>
 
 <style lang="scss" scoped>
-.mynavbar {
-  height: 100%;
-
-  border: 1px solid;
-  display: flex;
-  background-color: $dark;
+.navbar__wrapper {
+  background-color: $darkPurple;
 }
 
 .logo {

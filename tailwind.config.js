@@ -12,6 +12,7 @@ module.exports = {
     'borderStyle',
     'borderWidth',
     'borderColor',
+    'boxShadow',
     // Flex
     'flex',
     'flexDirection',
@@ -19,9 +20,12 @@ module.exports = {
     'alignItems',
     // Display
     'display',
-    'width',
+    'height',
     'maxWidth',
-    'minWidth'
+    'minWidth',
+    'width',
+    'minHeight',
+    'maxHeight'
   ],
   purge: [
     './public/**/*.html',
