@@ -48,10 +48,31 @@
 export default {
   props: {
     //
+    // Opciones de validación
+    //
+
+    //
     // Verifica si el componente necesita una verificación de contraseña
     repeatPassword: {
       type: Boolean,
+      required: false,
       default: false
+    },
+
+    //
+    // Especifica la longitud mínima de la contraseña
+    minLength: {
+      type: Number,
+      required: false,
+      default: 6
+    },
+
+    //
+    // Especifica la longitud máxima de la contraseña
+    maxLength: {
+      type: Number,
+      required: false,
+      default: 16
     }
   },
 

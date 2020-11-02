@@ -2,7 +2,7 @@
   <Form>
     <Notification />
 
-    <h1>Agregar nueva imagen</h1>
+    <h1 class="text-4xl">Agregar nueva imagen</h1>
 
     <form @submit.prevent="addNewImage">
       <!-- Imagen -->
